@@ -49,7 +49,7 @@ def lambda_handler(event, context):
         response = dbtable.query(IndexName="name-index",KeyConditionExpression=Key("name").eq(message_receiver))
         if response["Items"]:
             receiver_connection_id = response["Items"][0]["connection_id"]
-            message_body = json.dumps({"from": sender_name, "MessageBody": json.loads(event["body"]).get("MessageBody")})
+            message_body = json.dumps({"from": sender_name, "MessageBody": json.loads(event["body"]).get("MessageBody"), "time": json.loads(event["body"]).get("time")})
             client.post_to_connection(ConnectionId=receiver_connection_id, Data=message_body)
         else:
             # buffer the messages for when the user connects again
