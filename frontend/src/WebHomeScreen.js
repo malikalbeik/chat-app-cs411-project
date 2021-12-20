@@ -91,7 +91,7 @@ const WebHomeScreen = () => {
                     <DialogTitle></DialogTitle>
                     <DialogContent>
                         <DialogContentText>
-                            Please enter the name that you want to use in the chat
+                            Please enter the user name of the user you want to chat with
                         </DialogContentText>
                         <TextField
                             autoFocus
@@ -104,7 +104,7 @@ const WebHomeScreen = () => {
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleNewChatSubmit}>Sign in</Button>
+                        <Button onClick={handleNewChatSubmit}>Create chat</Button>
                     </DialogActions>
                 </Dialog>
 
